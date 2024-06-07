@@ -1,0 +1,36 @@
+.container {
+    background-color: rgb(231, 231, 231);
+    display: flex;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 10px;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.btn{
+    display: block;
+    padding: 10px;
+    background-color: rgb(69, 169, 251);
+    border: 1px solid rgb(139, 139, 139);
+    border-radius: 5px;
+    margin: 0 auto;
+    border: 0;
+    color: rgb(255, 244, 230);
+    font-size: large;
+}
+
+.btn:hover {
+    background-color: rgb(175, 0, 44);
+}
+
+.contactInfo {
+    display: block;
+    gap: 10px; 
+    line-height: 1.2em;
+    font-size: large;
+    font-weight: 500;
+    width: 200px;
+}

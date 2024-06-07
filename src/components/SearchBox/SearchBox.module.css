@@ -1,0 +1,19 @@
+.box {
+    display: block;
+    padding: 10px;
+    margin-bottom: 10px;  
+    border: 1px solid rgb(139, 139, 139);
+    border-radius: 5px;
+    width: 400px
+}
+
+.label{
+    font-size: large;
+    font-weight: 500;
+}
+.input{
+    width: 94%;
+    padding: 10px;
+    border: 1px solid rgb(156, 156, 156);
+    border-radius: 5px;
+}
