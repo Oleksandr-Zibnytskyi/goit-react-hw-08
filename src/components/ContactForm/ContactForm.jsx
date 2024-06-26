@@ -1,22 +1,32 @@
 import { useDispatch } from 'react-redux';
-import { addContact } from '../../redux/contactsOps';
+import { addContact } from '../../redux/contacts/operations';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { useAutoAnimate } from "@formkit/auto-animate/react";
 import css from './ContactForm.module.css';
 import * as Yup from 'yup';
-import { useId } from 'react';
-import { nanoid } from 'nanoid';
+import toast from "react-hot-toast";
+
 
 const ContactForm = () => {
-  const nameFieldId = useId();
-  const numberFieldId = useId();
-
   const dispatch = useDispatch();
+  const [parent] = useAutoAnimate({
+    easing: "linear",
+    duration: 300,
+  });
 
   const handleSubmit = (values, actions) => {
-    const id = nanoid();
-    const { name, number } = values;
-    dispatch(addContact({ id, name, number }));
-    actions.resetForm();
+    dispatch(addContact(values))
+      .unwrap()
+      .then(() => {
+        toast.success("Contact successfully added.", {
+          icon: "✍️",
+        });
+
+        actions.resetForm();
+      })
+      .catch((error) => {
+        console.error("Failed to add contact:", error.message);
+      });
   };
 
   const ValidationForm = Yup.object().shape({
@@ -41,30 +51,23 @@ const ContactForm = () => {
       onSubmit={handleSubmit}
       validationSchema={ValidationForm}
     >
-      <Form className={css.form}>
-        <div className={css.formGroup}>
-          <label htmlFor={nameFieldId}>name</label>
-          <Field
-            className={css.input}
-            type="text"
-            name="name"
-            id={nameFieldId}
-          />
-          <ErrorMessage className={css.err} name="name" component="span" />
+     <Form className={css.form}>
+        <div ref={parent} className={css.wrapper}>
+          <label htmlFor="name">Name</label>
+          <Field className={css.input} type="text" name="name" />
+          <ErrorMessage className={css.error} name="name" component="span" />
         </div>
-
-        <div className={css.formGroup}>
-          <label htmlFor={numberFieldId}>number</label>
+        <div ref={parent} className={css.wrapper}>
+          <label htmlFor="number">Number</label>
           <Field
             className={css.input}
             type="text"
             name="number"
-            id={numberFieldId}
+            placeholder="XXX-XX-XX"
           />
-          <ErrorMessage className={css.err} name="number" component="span" />
+          <ErrorMessage className={css.error} name="number" component="span" />
         </div>
-
-        <button className={css.btn} type="submit">
+        <button className={css.formButton} type="submit">
           Add contact
         </button>
       </Form>

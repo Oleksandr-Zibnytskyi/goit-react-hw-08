@@ -1,0 +1,21 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  
+  .text {
+    color: #fafafa;
+  }
+  
+  .btn {
+    display: grid;
+    place-items: center;
+  
+    padding: 5px 13px;
+    max-width: 135px;
+    border: none;
+    border-radius: 9px;
+    outline: none;
+    background-color: #ffffff;
+  }

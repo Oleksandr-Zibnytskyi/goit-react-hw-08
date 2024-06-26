@@ -1,0 +1,16 @@
+.link {
+    display: block;
+  
+    padding: 20px 10px;
+    color: white;
+    font-size: 18px;
+  }
+  
+  .link:hover {
+    color: rgb(184, 184, 184);
+  }
+  
+  .list {
+    display: flex;
+    gap: 12px;
+  }

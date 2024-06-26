@@ -1,0 +1,52 @@
+.form {
+    display: grid;
+    gap: 15px;
+    padding: 30px 20px;
+    max-width: 290px;
+    background-color: rgb(95, 95, 95);
+    border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  }
+  
+  .inputWrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .inputWrapper:last-of-type {
+    margin-bottom: 18px;
+  }
+  
+  .input {
+    padding: 5px 10px;
+    border-radius: 7px;
+    border: 1px solid black;
+    max-width: 250px;
+    outline: none;
+  }
+  
+  .btn {
+    padding: 10px 30px;
+    max-width: 135px;
+    border: 1px solid rgb(0, 0, 0);
+    font-size: large;
+    border-radius: 9px;
+    outline: none;
+    background-color: rgb(129, 186, 217);
+    margin-left: auto;
+    margin-right: auto;
+   
+  }
+  
+  .error {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -16px;
+  
+    font-size: 13px;
+    color: rgb(89, 24, 77);
+  }
