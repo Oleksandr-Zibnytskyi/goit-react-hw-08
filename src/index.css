@@ -7,7 +7,12 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('/src/images/qqq.jpeg');
+  background-size: cover; 
+  background-repeat: repeat; 
 
+  
+  height: 200px; 
 }
 
 .list {
@@ -55,7 +60,9 @@ button {
 body {
   font-family: "Roboto", sans-serif;
   color: #ffffff;
-  background-color: rgb(52, 52, 52);
+  background-color: transparent;
+  padding-left: 80px;
+  padding-right: 80px;
 }
 
 

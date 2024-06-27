@@ -7,7 +7,8 @@ import ContactForm from "../../components/ContactForm/ContactForm";
 import css from "./ContactsPage.module.css";
 import Loader from "../../components/Loader/Loader";
 import Error from "../../components/Error/Error";
-import SearchBox from "../../components/SearchBox/SearchBox";
+import SearchBox from "../../components/SearchBox/SearchBox"
+import ModalWindow from "../../components/ModalWindow/ModalWindow";;
 
 export default function ContactsPage() {
   const dispatch = useDispatch();
@@ -27,6 +28,7 @@ export default function ContactsPage() {
       <ContactList />
       {isLoading && <Loader />}
       {isError && <Error />}
+      <ModalWindow />
     </div>
   );
 }

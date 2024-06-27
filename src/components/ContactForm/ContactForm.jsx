@@ -1,18 +1,32 @@
 import { useDispatch } from 'react-redux';
+import { useId } from "react"
 import { addContact } from '../../redux/contacts/operations';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { useAutoAnimate } from "@formkit/auto-animate/react";
 import css from './ContactForm.module.css';
 import * as Yup from 'yup';
 import toast from "react-hot-toast";
 
+export const ValidationForm = Yup.object().shape({
+  name: Yup.string()
+    .min(3, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Required"),
+  number: Yup.string()
+    .min(3, "Too short")
+    .max(12, "Too long")
+    .required("Required"),
+});
 
 const ContactForm = () => {
   const dispatch = useDispatch();
-  const [parent] = useAutoAnimate({
-    easing: "linear",
-    duration: 300,
-  });
+  const nameFieldId = useId();
+  const numberFieldId = useId();
+
+        
+  const initialContact = {
+    name: "",
+    number: "",
+  };
 
   const handleSubmit = (values, actions) => {
     dispatch(addContact(values))
@@ -29,21 +43,7 @@ const ContactForm = () => {
       });
   };
 
-  const ValidationForm = Yup.object().shape({
-    name: Yup.string()
-      .min(3, 'Too Short!')
-      .max(50, 'Too Long!')
-      .required('Required'),
-    number: Yup.string()
-      .min(3, 'Too Short!')
-      .max(50, 'Too Long!')
-      .required('Required'),
-  });
 
-  const initialContact = {
-    name: '',
-    number: '',
-  };
 
   return (
     <Formik
@@ -52,13 +52,13 @@ const ContactForm = () => {
       validationSchema={ValidationForm}
     >
      <Form className={css.form}>
-        <div ref={parent} className={css.wrapper}>
-          <label htmlFor="name">Name</label>
+        <div ref={parent} className={css.wraper}>
+        <label htmlFor={nameFieldId}>Name</label>
           <Field className={css.input} type="text" name="name" />
           <ErrorMessage className={css.error} name="name" component="span" />
         </div>
-        <div ref={parent} className={css.wrapper}>
-          <label htmlFor="number">Number</label>
+        <div ref={parent} className={css.wraper}>
+        <label htmlFor={numberFieldId}>Number</label>
           <Field
             className={css.input}
             type="text"
@@ -67,7 +67,7 @@ const ContactForm = () => {
           />
           <ErrorMessage className={css.error} name="number" component="span" />
         </div>
-        <button className={css.formButton} type="submit">
+        <button className={css.btn} type="submit">
           Add contact
         </button>
       </Form>

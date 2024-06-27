@@ -4,6 +4,7 @@ import { register } from "../../redux/auth/operations";
 import * as Yup from "yup";
 import css from "./RegistrationForm.module.css";
 import toast from "react-hot-toast";
+import { FaUser, FaEnvelope, FaLock } from "react-icons/fa"; 
 
 const RegistrationSchema = Yup.object().shape({
   name: Yup.string()
@@ -44,34 +45,19 @@ export default function RegistrationForm() {
     >
       <Form className={css.form} autoComplete="off">
         <div className={css.inputWrapper}>
-          <label htmlFor="name">Username</label>
-          <Field
-            className={css.input}
-            type="text"
-            name="name"
-            id="name"
-            autoFocus
-          />
+          <label htmlFor="name"><FaUser /> Username</label>
+          <Field className={css.input} type="text" name="name" id="name" autoFocus />
           <ErrorMessage className={css.error} name="name" component="span" />
         </div>
         <div className={css.inputWrapper}>
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email"><FaEnvelope /> Email</label>
           <Field className={css.input} type="email" name="email" id="email" />
           <ErrorMessage className={css.error} name="email" component="span" />
         </div>
         <div className={css.inputWrapper}>
-          <label htmlFor="password">Password</label>
-          <Field
-            className={css.input}
-            type="password"
-            name="password"
-            id="password"
-          />
-          <ErrorMessage
-            className={css.error}
-            name="password"
-            component="span"
-          />
+          <label htmlFor="password"><FaLock /> Password</label>
+          <Field className={css.input} type="password" name="password" id="password" />
+          <ErrorMessage className={css.error} name="password" component="span" />
         </div>
         <button className={css.btn} type="submit">
           Register

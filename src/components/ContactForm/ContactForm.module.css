@@ -7,6 +7,12 @@
     width: 400px;
 }
 
+.wraper {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
 .formGroup {
     padding: 10px;
 }

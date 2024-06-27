@@ -1,0 +1,33 @@
+.modal{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+     background-color: #838383;
+   
+ }
+ 
+ .btnYes{
+    margin-top: 10px;
+    background-color:rgb(101, 155, 255);
+    border-radius: 5px;
+    border: 0;
+    padding: 10px 30px;
+    font-size: large;
+ }
+ .btnNo:hover, .btnNo:focus, .btnNo:active{
+    background-color:  rgb(255, 91, 91);
+    color: white;
+ }
+ .btnNo{
+    margin-top: 10px;
+    background-color:rgb(101, 155, 255);
+    border-radius: 5px;
+    border: 0;
+    padding: 10px 30px;
+    font-size: large;
+ }
+ 
+  .btnYes:hover, .btnYes:focus, .btnYes:active{   
+    background-color:  rgb(255, 91, 91);
+    color: white;
+ }

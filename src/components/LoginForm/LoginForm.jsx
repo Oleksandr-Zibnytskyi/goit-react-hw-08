@@ -4,6 +4,7 @@ import { toast } from "react-hot-toast";
 import { logIn } from "../../redux/auth/operations";
 import * as Yup from "yup";
 import css from "./LoginForm.module.css";
+import { FaEnvelope, FaLock } from "react-icons/fa"; 
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("This field is required"),
@@ -42,18 +43,14 @@ export default function LoginForm() {
     >
       <Form className={css.form} autoComplete="off">
         <div className={css.inputWrapper}>
-          <label className={css.label}>Email</label>
-          <Field className={css.input} type="email" name="email" autoFocus />
+          <label htmlFor="email"><FaEnvelope /> Email</label>
+          <Field className={css.input} type="email" name="email" id="email" autoFocus />
           <ErrorMessage className={css.error} name="email" component="span" />
         </div>
         <div className={css.inputWrapper}>
-          <label className={css.label}>Password</label>
-          <Field className={css.input} type="password" name="password" />
-          <ErrorMessage
-            className={css.error}
-            name="password"
-            component="span"
-          />
+          <label htmlFor="password"><FaLock /> Password</label>
+          <Field className={css.input} type="password" name="password" id="password" />
+          <ErrorMessage className={css.error} name="password" component="span" />
         </div>
         <button className={css.btn} type="submit">
           Log In
