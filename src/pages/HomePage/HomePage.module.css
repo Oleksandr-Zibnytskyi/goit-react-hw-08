@@ -1,4 +1,6 @@
 .title {
+  font-family: "Playwrite AU TAS", cursive;
+  font-weight: 400;
     margin-bottom: 10px;
     display: flex;
     justify-content: center;

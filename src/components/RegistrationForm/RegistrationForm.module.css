@@ -45,6 +45,9 @@
     transform: scale(1.05);
   }
 
+  .btn:hover {
+color: rgb(226, 226, 226);
+  }
 
   .error {
     content: "";

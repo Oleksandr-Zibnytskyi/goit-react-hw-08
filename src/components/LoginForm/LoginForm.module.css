@@ -41,6 +41,10 @@
     margin-right: auto;
   }
   
+  .btn:hover {
+    color: rgb(226, 226, 226);
+      }
+
   .btn:active {
     background-color: rgb(91, 163, 202);
     transform: scale(1.05);
