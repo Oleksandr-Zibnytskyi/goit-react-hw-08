@@ -8,7 +8,7 @@ import css from "./ContactsPage.module.css";
 import Loader from "../../components/Loader/Loader";
 import Error from "../../components/Error/Error";
 import SearchBox from "../../components/SearchBox/SearchBox"
-import ModalWindow from "../../components/ModalWindow/ModalWindow";;
+import ModalWindow from "../../components/ModalWindow/ModalWindow";
 
 export default function ContactsPage() {
   const dispatch = useDispatch();

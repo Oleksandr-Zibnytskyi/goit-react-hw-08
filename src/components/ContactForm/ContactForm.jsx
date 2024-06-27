@@ -52,12 +52,12 @@ const ContactForm = () => {
       validationSchema={ValidationForm}
     >
      <Form className={css.form}>
-        <div ref={parent} className={css.wraper}>
+        <div className={css.wraper}>
         <label htmlFor={nameFieldId}>Name</label>
           <Field className={css.input} type="text" name="name" />
           <ErrorMessage className={css.error} name="name" component="span" />
         </div>
-        <div ref={parent} className={css.wraper}>
+        <div className={css.wraper}>
         <label htmlFor={numberFieldId}>Number</label>
           <Field
             className={css.input}
